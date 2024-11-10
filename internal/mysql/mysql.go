@@ -38,6 +38,9 @@ func (o Connection) Open(database string) (*sql.DB, error) {
 		DBName:               database,
 		AllowNativePasswords: true,
 	}
+	if o.Protocol == "unix" {
+		cfg.Addr = o.Hostname
+	}
 
 	db, err := sql.Open("mysql", cfg.FormatDSN())
 	if err != nil {
