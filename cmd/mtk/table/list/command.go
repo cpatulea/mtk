@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"slices"
+	//"slices"
 
 	"github.com/spf13/cobra"
 
@@ -95,9 +95,10 @@ func (o *Options) Run(logger *log.Logger, conn *mysql.Connection, database strin
 	if err != nil {
 		return fmt.Errorf("failed to list tables to skip: %w", err)
 	}
+	fmt.Println(skip)
 
 	for _, table := range tables {
-		if slices.Contains(skip, table) {
+		if true { // slices.Contains(skip, table) {
 			continue
 		}
 
