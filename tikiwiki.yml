@@ -1,0 +1,36 @@
+rewrite:
+  users_users:
+    email: '"<redacted>"'
+    hash: '"<redacted>"'
+    lastLogin: NULL
+    currentLogin: NULL
+    twoFactorSecret: NULL
+  
+  tiki_files:
+    data: >
+      if(fileId in (
+        36, -- Dues history
+        40, -- Dues history
+        42, -- Dues history(Feb)
+        44 -- Dues history (sept 2010)
+      ), "<redacted>", data)
+
+  tiki_userfiles:
+    data: '"<redacted>"'
+
+  tiki_comments:
+    user_ip: '"<redacted>"'
+
+  tiki_history:
+    ip: '"<redacted>"'
+
+  tiki_user_watches:
+    email: '"<redacted>"'
+
+nodata:
+- tiki_actionlog
+- tiki_logs
+- tiki_user_login_cookies
+- messu_messages
+- messu_sent
+- index_*
