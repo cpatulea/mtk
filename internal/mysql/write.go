@@ -177,7 +177,7 @@ func (d *Client) WriteTableData(w io.Writer, table string, params provider.DumpP
 			vals = append(vals, val)
 		}
 
-		fmt.Fprintf(w, "(%s)", strings.Join(vals, ","))
+		fmt.Fprintf(w, "\n(%s)", strings.Join(vals, ","))
 	}
 
 	fmt.Fprintln(w, ";")
